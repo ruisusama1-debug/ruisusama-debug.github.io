@@ -1,0 +1,601 @@
+/* =====================================
+   SECCIÓN MUNDOS
+===================================== */
+
+.mundos {
+
+    position: relative;
+
+    padding: 90px 30px 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8ed4f7 0%,
+            #b8e5fa 45%,
+            #dff5ff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decoraciones de fondo */
+
+.mundos::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    left: 5%;
+    top: 60px;
+
+    font-size: 70px;
+
+    color: rgba(255,255,255,.65);
+
+    animation: estrella 3s infinite;
+}
+
+.mundos::after {
+
+    content: "♥";
+
+    position: absolute;
+
+    right: 6%;
+    bottom: 80px;
+
+    font-size: 75px;
+
+    color: rgba(255,255,255,.55);
+
+    animation: corazon 2.5s infinite;
+}
+
+
+/* =====================================
+   TÍTULO
+===================================== */
+
+.titulo-mundos {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.arco {
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+    animation: arco 3s ease-in-out infinite;
+}
+
+.titulo-mundos h2 {
+
+    font-size: 43px;
+
+    color: #2374bd;
+
+    text-shadow:
+        2px 3px 0 white;
+
+    margin-bottom: 8px;
+}
+
+.titulo-mundos p {
+
+    color: #527b9d;
+
+    font-size: 18px;
+}
+
+
+/* =====================================
+   TARJETAS
+===================================== */
+
+.cards-mundos {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.mundo-card {
+
+    position: relative;
+
+    min-height: 470px;
+
+    padding: 25px 20px 30px;
+
+    text-align: center;
+
+    border-radius: 32px;
+
+    background: rgba(255,255,255,.90);
+
+    border: 3px solid var(--color);
+
+    box-shadow:
+        0 15px 35px rgba(40,110,170,.18);
+
+    overflow: hidden;
+
+    transition:
+        .4s ease;
+
+}
+
+
+/* Brillo interior */
+
+.mundo-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: var(--color);
+
+    opacity: .10;
+
+    top: -90px;
+    right: -70px;
+}
+
+.mundo-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: var(--color);
+
+    opacity: .07;
+
+    bottom: -60px;
+    left: -50px;
+}
+
+
+.mundo-card:hover {
+
+    transform:
+        translateY(-15px);
+
+    box-shadow:
+        0 25px 45px rgba(40,110,170,.25);
+}
+
+
+/* =====================================
+   DECORACIÓN
+===================================== */
+
+.decoracion {
+
+    position: absolute;
+
+    right: 18px;
+    top: 13px;
+
+    font-size: 28px;
+
+    color: var(--color);
+
+    z-index: 5;
+
+    animation:
+        decoracion 2s infinite;
+}
+
+
+/* =====================================
+   ESPACIO PARA IMAGEN
+===================================== */
+
+.imagen-osito {
+
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    margin: 5px auto 12px;
+
+    border-radius: 50%;
+
+    background: var(--imagen-bg);
+
+    border: 6px solid white;
+
+    box-shadow:
+        0 8px 20px rgba(40,80,120,.18);
+
+    overflow: hidden;
+
+    transition: .4s;
+
+}
+
+
+/* Imagen */
+
+.imagen-osito img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Placeholder */
+
+.imagen-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 65px;
+
+    color: white;
+
+    z-index: 1;
+}
+
+
+/* Hover de imagen */
+
+.mundo-card:hover .imagen-osito {
+
+    transform:
+        scale(1.08)
+        rotate(3deg);
+}
+
+
+/* =====================================
+   ICONO
+===================================== */
+
+.icono-mundo {
+
+    font-size: 32px;
+
+    margin-bottom: 2px;
+
+    animation:
+        icono 2s infinite;
+}
+
+
+/* =====================================
+   TEXTO
+===================================== */
+
+.mundo-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 27px;
+
+    color: var(--color-dark);
+
+    margin-bottom: 10px;
+}
+
+
+.mundo-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 80px;
+
+    color: #637c98;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.mundo-card button {
+
+    position: relative;
+
+    z-index: 4;
+
+    border: none;
+
+    padding: 13px 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color),
+            var(--color-light)
+        );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 15px rgba(50,80,120,.18);
+
+    transition: .3s;
+}
+
+
+.mundo-card button:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 10px 20px rgba(50,80,120,.25);
+}
+
+
+/* =====================================
+   ROSA
+===================================== */
+
+.rosa {
+
+    --color: #f47bad;
+
+    --color-light: #ff9bc2;
+
+    --color-dark: #df4c88;
+
+    --imagen-bg: #ffd9e9;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff0f6
+        );
+}
+
+
+/* =====================================
+   AMARILLO
+===================================== */
+
+.amarillo {
+
+    --color: #f4c83d;
+
+    --color-light: #ffdc65;
+
+    --color-dark: #d69d13;
+
+    --imagen-bg: #fff1b6;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff9df
+        );
+}
+
+
+/* =====================================
+   MORADO
+===================================== */
+
+.morado {
+
+    --color: #9d73d8;
+
+    --color-light: #b994eb;
+
+    --color-dark: #7549b2;
+
+    --imagen-bg: #eadcff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3ebff
+        );
+}
+
+
+/* =====================================
+   AZUL
+===================================== */
+
+.azul {
+
+    --color: #4d9fe0;
+
+    --color-light: #72b8ec;
+
+    --color-dark: #2878ba;
+
+    --imagen-bg: #d7efff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e9f7ff
+        );
+}
+
+
+/* =====================================
+   ANIMACIONES
+===================================== */
+
+@keyframes arco {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes estrella {
+
+    0%,100% {
+        transform: rotate(0) scale(1);
+    }
+
+    50% {
+        transform: rotate(20deg) scale(1.2);
+    }
+}
+
+
+@keyframes corazon {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes decoracion {
+
+    0%,100% {
+        transform: rotate(0) scale(1);
+    }
+
+    50% {
+        transform: rotate(12deg) scale(1.2);
+    }
+}
+
+
+@keyframes icono {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:1050px) {
+
+    .cards-mundos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 750px;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    .mundos {
+
+        padding: 60px 18px;
+    }
+
+    .titulo-mundos h2 {
+
+        font-size: 32px;
+    }
+
+    .cards-mundos {
+
+        grid-template-columns: 1fr;
+    }
+
+    .mundo-card {
+
+        max-width: 380px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+}

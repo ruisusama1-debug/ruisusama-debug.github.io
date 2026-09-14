@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌈 Mundo de los Ositos 🧸</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --cielo:#AEE4FF;
+    --cielo2:#EFFFFF;
+    --blanco:#fff;
+    --texto:#536B80;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+
+    min-height:100vh;
+
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8ED8FF 0%,
+            #C9EEFF 45%,
+            #F4FCFF 100%
+        );
+}
+
+
+/* =====================================================
+   FONDO
+===================================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+
+    z-index:-20;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+
+/* SOL */
+
+.sun{
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    top:70px;
+    right:9%;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #FFF9A8,
+            #FFD83D,
+            #FFB300
+        );
+
+    box-shadow:
+        0 0 40px #FFF3A0,
+        0 0 100px rgba(255,214,55,.6);
+
+    animation:
+        sunFloat 5s ease-in-out infinite,
+        glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes sunFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+@keyframes glow{
+
+    from{
+        box-shadow:
+        0 0 35px #FFF3A0,
+        0 0 70px rgba(255,214,55,.4);
+    }
+
+    to{
+        box-shadow:
+        0 0 65px #FFF8B5,
+        0 0 120px rgba(255,214,55,.7);
+    }
+
+}
+
+
+/* NUBES */
+
+.cloud{
+    position:absolute;
+
+    width:190px;
+    height:55px;
+
+    background:white;
+
+    border-radius:50px;
+
+    opacity:.8;
+
+    filter:
+        drop-shadow(
+            0 8px 10px rgba(70,130,170,.1)
+        );
+
+    animation:
+        moveCloud 40s linear infinite;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:80px;
+    height:80px;
+
+    left:25px;
+    bottom:5px;
+}
+
+.cloud::after{
+    width:95px;
+    height:95px;
+
+    right:20px;
+    bottom:0;
+}
+
+.cloud1{
+    top:180px;
+    left:-250px;
+}
+
+.cloud2{
+    top:400px;
+    left:-300px;
+
+    transform:scale(.7);
+
+    animation-duration:50s;
+}
+
+.cloud3{
+    top:620px;
+    left:-250px;
+
+    transform:scale(.9);
+
+    animation-duration:45s;
+}
+
+@keyframes moveCloud{
+
+    from{
+        transform:translateX(-300px);
+    }
+
+    to{
+        transform:
+            translateX(
+                calc(100vw + 400px)
+            );
+    }
+
+}
+
+
+/* ESTRELLAS */
+
+.star{
+    position:absolute;
+
+    color:white;
+
+    font-size:25px;
+
+    opacity:.6;
+
+    animation:
+        starFloat 4s ease-in-out infinite;
+}
+
+.star1{top:25%;left:10%;}
+.star2{top:38%;left:80%;}
+.star3{top:65%;left:12%;}
+.star4{top:72%;left:88%;}
+.star5{top:15%;left:45%;}
+.star6{top:50%;left:55%;}
+
+@keyframes starFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:.3;
+    }
+
+    50%{
+        transform:
+            translateY(-18px)
+            rotate(180deg);
+
+        opacity:1;
+    }
+
+}
+
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:
+        150px
+        7%
+        70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+}
+
+
+/* TITULO */
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:
+        10px
+        22px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    color:#6594AD;
+
+    font-weight:600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(50,130,170,.12);
+
+    animation:
+        appear 1s ease;
+}
+
+.hero h1{
+
+    margin-top:20px;
+
+    font-size:
+        clamp(
+            55px,
+            9vw,
+            105px
+        );
+
+    line-height:.9;
+
+    color:#FFFFFF;
+
+    text-shadow:
+
+        4px 5px 0 #76C7ED,
+
+        8px 10px 25px
+        rgba(60,130,170,.2);
+
+    animation:
+        titleIn 1s ease;
+}
+
+.hero h1 span{
+    color:#FFD83D;
+}
+
+.hero-description{
+
+    max-width:700px;
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:#55758A;
+
+    animation:
+        appear 1.3s ease;
+}
+
+@keyframes titleIn{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.9);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* =====================================================
+   ARCOIRIS
+===================================================== */
+
+.rainbow{
+
+    position:absolute;
+
+    width:650px;
+    height:325px;
+
+    bottom:-90px;
+
+    border-radius:
+        650px
+        650px
+        0
+        0;
+
+    border:
+        35px solid
+        rgba(255,110,140,.35);
+
+    border-bottom:none;
+
+    opacity:.5;
+
+    filter:
+        drop-shadow(
+            0 10px 10px
+            rgba(100,160,190,.1)
+        );
+
+    z-index:-1;
+}
+
+.rainbow::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:35px;
+
+    border-radius:
+        600px
+        600px
+        0
+        0;
+
+    border:
+        35px solid
+        rgba(255,213,61,.35);
+
+    border-bottom:none;
+}
+
+.rainbow::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:70px;
+
+    border-radius:
+        550px
+        550px
+        0
+        0;
+
+    border:
+        35px solid
+        rgba(115,210,145,.35);
+
+    border-bottom:none;
+}
+
+
+/* =====================================================
+   OSITOS
+===================================================== */
+
+.bears-section{
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin-top:65px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:25px;
+
+    animation:
+        cardsIn 1.2s ease;
+}
+
+@keyframes cardsIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* TARJETA */
+
+.bear-card{
+
+    position:relative;
+
+    min-height:410px;
+
+    padding:18px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border:
+        3px solid
+        rgba(255,255,255,.9);
+
+    background:
+        rgba(255,255,255,.65);
+
+    box-shadow:
+        0 20px 45px
+        rgba(60,130,170,.13);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s;
+}
+
+.bear-card:hover{
+
+    transform:
+        translateY(-18px)
+        rotate(-1deg)
+        scale(1.02);
+
+    box-shadow:
+        0 35px 65px
+        rgba(60,130,170,.25);
+}
+
+
+/* FONDO INTERNO */
+
+.bear-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    right:-70px;
+    top:-70px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    transition:.5s;
+}
+
+.bear-card:hover::before{
+
+    transform:
+        scale(1.5);
+
+}
+
+
+/* IMAGEN */
+
+.bear-image{
+
+    height:210px;
+
+    border-radius:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#eee;
+}
+
+.bear-image img{
+
+    width:90%;
+    height:90%;
+
+    object-fit:contain;
+
+    transition:.5s;
+
+    filter:
+        drop-shadow(
+            0 12px 10px
+            rgba(60,80,100,.15)
+        );
+}
+
+.bear-card:hover
+.bear-image img{
+
+    transform:
+        scale(1.12)
+        translateY(-5px)
+        rotate(2deg);
+}
+
+
+/* INFO */
+
+.bear-info{
+
+    text-align:center;
+
+    padding:20px 10px;
+}
+
+.bear-info h2{
+
+    font-size:28px;
+
+    margin-bottom:7px;
+}
+
+.bear-info p{
+
+    font-size:16px;
+
+    line-height:1.5;
+
+    opacity:.8;
+}
+
+
+/* BOTON */
+
+.explore{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:
+        11px
+        22px;
+
+    border-radius:30px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.explore:hover{
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+
+/* ROSA */
+
+.pink{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFE0ED,
+            #FFF5FA
+        );
+}
+
+.pink .bear-image{
+    background:#FFD0E2;
+}
+
+.pink h2{
+    color:#DF4D88;
+}
+
+.pink .explore{
+
+    background:
+        linear-gradient(
+            135deg,
+            #F47BAD,
+            #DF4D88
+        );
+}
+
+
+/* AMARILLO */
+
+.yellow{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFF0A6,
+            #FFFDF0
+        );
+}
+
+.yellow .bear-image{
+    background:#FFE78A;
+}
+
+.yellow h2{
+    color:#D79B00;
+}
+
+.yellow .explore{
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD83D,
+            #E9A500
+        );
+}
+
+
+/* MORADO */
+
+.purple{
+
+    background:
+        linear-gradient(
+            180deg,
+            #E9DAFF,
+            #FAF6FF
+        );
+}
+
+.purple .bear-image{
+    background:#DCC7FA;
+}
+
+.purple h2{
+    color:#8051B6;
+}
+
+.purple .explore{
+
+    background:
+        linear-gradient(
+            135deg,
+            #A779DD,
+            #7549B2
+        );
+}
+
+
+/* AZUL */
+
+.blue{
+
+    background:
+        linear-gradient(
+            180deg,
+            #D7F1FF,
+            #F7FCFF
+        );
+}
+
+.blue .bear-image{
+    background:#B9E6FF;
+}
+
+.blue h2{
+    color:#3985BF;
+}
+
+.blue .explore{
+
+    background:
+        linear-gradient(
+            135deg,
+            #63B2E8,
+            #2878BA
+        );
+}
+
+
+/* =====================================================
+   SECCION INFERIOR
+===================================================== */
+
+.welcome{
+
+    padding:
+        90px 8%;
+
+    text-align:center;
+}
+
+.welcome-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:
+        50px 35px;
+
+    border-radius:40px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        3px solid white;
+
+    box-shadow:
+        0 20px 45px
+        rgba(60,130,170,.12);
+}
+
+.welcome-box h2{
+
+    font-size:40px;
+
+    color:#629FC0;
+
+    margin-bottom:15px;
+}
+
+.welcome-box p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#5D7180;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.55);
+
+    color:#698091;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   BOTON FLOTANTE
+===================================================== */
+
+.top-button{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD83D,
+            #F3A900
+        );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(200,150,20,.3);
+
+    z-index:500;
+
+    transition:.3s;
+}
+
+.top-button:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.08);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .bears-section{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .navbar{
+
+        width:94%;
+
+        height:62px;
+
+        padding:
+            0 18px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .hero{
+
+        padding:
+            130px 20px 50px;
+    }
+
+    .hero h1{
+
+        font-size:
+            clamp(
+                55px,
+                17vw,
+                80px
+            );
+    }
+
+    .hero-description{
+
+        font-size:17px;
+    }
+
+    .bears-section{
+
+        grid-template-columns:1fr;
+
+        padding:0 10px;
+    }
+
+    .bear-card{
+
+        min-height:390px;
+    }
+
+    .sun{
+
+        width:100px;
+        height:100px;
+
+        top:100px;
+        right:2%;
+    }
+
+    .rainbow{
+
+        width:400px;
+        height:200px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FONDO
+===================================================== -->
+
+<div class="background">
+
+    <div class="sun"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="star star1">✦</div>
+    <div class="star star2">✧</div>
+    <div class="star star3">✦</div>
+    <div class="star star4">✧</div>
+    <div class="star star5">✦</div>
+    <div class="star star6">✧</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+
+    <div class="rainbow"></div>
+
+
+    <span class="hero-badge">
+
+        🌈 Bienvenido a un lugar especial 🧸
+
+    </span>
+
+
+    <h1>
+
+        Mundo de
+        <span>
+            Ositos
+        </span>
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        Cuatro pequeños mundos,
+        cuatro personalidades y
+        muchas historias por descubrir.
+
+        <br>
+
+        Elige un osito y entra en
+        su propio universo. ✨
+
+    </p>
+
+
+    <!-- =================================================
+         TARJETAS
+    ================================================== -->
+
+    <div
+        class="bears-section"
+        id="mundos"
+    >
+
+
+        <!-- =============================================
+             ROSA
+        ============================================== -->
+
+        <div
+            class="bear-card pink"
+            onclick="entrar('rosa.html')"
+        >
+
+            <div class="bear-image">
+
+                <!-- TU IMAGEN -->
+
+                <img
+                    src="rosa.png"
+                    alt="Osito Rosa"
+                >
+
+            </div>
+
+
+            <div class="bear-info">
+
+                <h2>
+                    💗 Osito Rosa
+                </h2>
+
+                <p>
+                    Un mundo lleno de
+                    amor, cariño y amistad.
+                </p>
+
+
+                <a
+                    href="rosa.html"
+                    class="explore"
+                    onclick="event.stopPropagation()"
+                >
+                    Explorar 💗
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             AMARILLO
+        ============================================== -->
+
+        <div
+            class="bear-card yellow"
+            onclick="entrar('amarillo.html')"
+        >
+
+            <div class="bear-image">
+
+                <!-- TU IMAGEN -->
+
+                <img
+                    src="amarillo.png"
+                    alt="Osito Amarillo"
+                >
+
+            </div>
+
+
+            <div class="bear-info">
+
+                <h2>
+                    💛 Osito Amarillo
+                </h2>
+
+                <p>
+                    Un mundo lleno de
+                    alegría, energía y sol.
+                </p>
+
+
+                <a
+                    href="amarillo.html"
+                    class="explore"
+                    onclick="event.stopPropagation()"
+                >
+                    Explorar ☀️
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             MORADO
+        ============================================== -->
+
+        <div
+            class="bear-card purple"
+            onclick="entrar('morado.html')"
+        >
+
+            <div class="bear-image">
+
+                <!-- TU IMAGEN -->
+
+                <img
+                    src="morado.png"
+                    alt="Osito Morado"
+                >
+
+            </div>
+
+
+            <div class="bear-info">
+
+                <h2>
+                    💜 Osito Morado
+                </h2>
+
+                <p>
+                    Un mundo de sueños,
+                    estrellas y fantasía.
+                </p>
+
+
+                <a
+                    href="morado.html"
+                    class="explore"
+                    onclick="event.stopPropagation()"
+                >
+                    Explorar ✨
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             AZUL
+        ============================================== -->
+
+        <div
+            class="bear-card blue"
+            onclick="entrar('azul.html')"
+        >
+
+            <div class="bear-image">
+
+                <!-- TU IMAGEN -->
+
+                <img
+                    src="azul.png"
+                    alt="Osito Azul"
+                >
+
+            </div>
+
+
+            <div class="bear-info">
+
+                <h2>
+                    💙 Osito Azul
+                </h2>
+
+                <p>
+                    Un mundo de amistad,
+                    paz y tranquilidad.
+                </p>
+
+
+                <a
+                    href="azul.html"
+                    class="explore"
+                    onclick="event.stopPropagation()"
+                >
+                    Explorar 💙
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NUESTRO MUNDO
+===================================================== -->
+
+<section
+    class="welcome"
+    id="nosotros"
+>
+
+    <div class="welcome-box">
+
+        <h2>
+            🌈 ¿Cuál será tu mundo?
+        </h2>
+
+        <p>
+
+            Cada osito tiene una personalidad,
+            una historia y un pequeño universo
+            esperando ser descubierto.
+
+            <br><br>
+
+            Puedes entrar, conocer su historia,
+            mirar fotografías, leer su carta
+            y finalmente elegir tu osito favorito.
+
+            <br><br>
+
+            🧸💗
+            ☀️💛
+            ✨💜
+            🌊💙
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🧸🌈 Mundo de los Ositos
+
+    <br><br>
+
+    Un pequeño universo lleno de
+    color, imaginación y cariño. ✨
+
+</footer>
+
+
+<!-- BOTON ARRIBA -->
+
+<a
+    href="#inicio"
+    class="top-button"
+>
+    ↑
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* ==============================================
+   ENTRAR AL MUNDO
+============================================== */
+
+function entrar(pagina){
+
+    document.body.style.opacity = "0";
+
+    document.body.style.transition =
+        "opacity .35s ease";
+
+
+    setTimeout(function(){
+
+        window.location.href =
+            pagina;
+
+    },350);
+
+}
+
+
+/* ==============================================
+   EFECTO 3D EN LAS TARJETAS
+============================================== */
+
+const cards =
+    document.querySelectorAll(
+        ".bear-card"
+    );
+
+
+cards.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        function(e){
+
+            const rect =
+                card.getBoundingClientRect();
+
+
+            const x =
+                e.clientX - rect.left;
+
+
+            const y =
+                e.clientY - rect.top;
+
+
+            const centerX =
+                rect.width / 2;
+
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateX =
+                (y - centerY) / 18;
+
+
+            const rotateY =
+                (centerX - x) / 18;
+
+
+            card.style.transform =
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-12px)
+                 scale(1.02)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        function(){
+
+            card.style.transform =
+                "";
+
+        }
+    );
+
+});
+
+
+/* ==============================================
+   APARECER AL HACER SCROLL
+============================================== */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity =
+                        "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.15
+        }
+    );
+
+
+document
+    .querySelectorAll(
+        ".welcome-box"
+    )
+    .forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(40px)";
+
+        element.style.transition =
+            "1s ease";
+
+        observer.observe(element);
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

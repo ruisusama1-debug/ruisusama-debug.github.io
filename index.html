@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Un mundo de ositos 🌈</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<a href="intro.html">
+
+<style>
+    a {
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #55a9f5 0%,
+            #8bc8fa 45%,
+            #ffd9f1 100%
+        );
+
+    color: #2672c8;
+}
+
+
+/* =========================
+   CIELO
+========================= */
+
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/* Sol */
+
+.sun {
+    position: absolute;
+    right: 5%;
+    top: 50px;
+
+    width: 130px;
+    height: 130px;
+
+    background: #ffe55c;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px #ffe98a;
+
+    animation: sun 4s ease-in-out infinite;
+}
+
+@keyframes sun {
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* Rayos */
+
+.sun::before {
+    content: "✦";
+    position: absolute;
+
+    font-size: 190px;
+
+    color: #ffd83d;
+
+    left: -30px;
+    top: -50px;
+
+    z-index: -1;
+}
+
+
+/* Nubes */
+
+.cloud {
+    position: absolute;
+
+    width: 180px;
+    height: 55px;
+
+    background: white;
+
+    border-radius: 50px;
+
+    opacity: .8;
+
+    animation: cloudMove 25s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: white;
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 80px;
+    height: 80px;
+
+    left: 25px;
+    top: -35px;
+}
+
+.cloud::after {
+    width: 65px;
+    height: 65px;
+
+    right: 25px;
+    top: -25px;
+}
+
+.cloud1 {
+    top: 160px;
+    left: -200px;
+}
+
+.cloud2 {
+    top: 350px;
+    left: -300px;
+
+    animation-delay: 8s;
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(-250px);
+    }
+
+    to {
+        transform: translateX(140vw);
+    }
+
+}
+
+
+/* =========================
+   ARCOÍRIS
+========================= */
+
+.rainbow {
+
+    position: absolute;
+
+    width: 850px;
+    height: 430px;
+
+    left: 50%;
+    top: 40px;
+
+    transform: translateX(-50%);
+
+    border-radius: 500px 500px 0 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff72a9 0%,
+            #ff72a9 15%,
+            #ffd966 15%,
+            #ffd966 30%,
+            #75d7bd 30%,
+            #75d7bd 45%,
+            #72b6ed 45%,
+            #72b6ed 60%,
+            #a98be8 60%,
+            #a98be8 75%,
+            transparent 75%
+        );
+
+    opacity: .8;
+
+    z-index: 0;
+}
+
+.rainbow::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 330px;
+
+    left: 100px;
+    top: 100px;
+
+    background: #74baf0;
+
+    border-radius: 500px 500px 0 0;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.header {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    padding-top: 45px;
+
+    animation: appear 1s ease;
+}
+
+.header h1 {
+
+    color: white;
+
+    font-size: clamp(38px, 6vw, 75px);
+
+    font-weight: 700;
+
+    text-shadow:
+        3px 4px 0 #2874c8,
+        0 5px 15px rgba(0,0,0,.12);
+}
+
+.header h1 span {
+    color: #ff5c9e;
+}
+
+.header p {
+
+    margin-top: 8px;
+
+    color: white;
+
+    font-size: 21px;
+
+    text-shadow:
+        2px 2px 3px rgba(50,100,180,.3);
+}
+
+
+/* =========================
+   OSITOS
+========================= */
+
+.bears {
+
+    position: relative;
+
+    z-index: 5;
+
+    height: 460px;
+
+    max-width: 1200px;
+
+    margin: 30px auto 0;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-end;
+}
+
+
+/* Osito */
+
+.bear {
+
+    position: relative;
+
+    width: 190px;
+
+    height: 280px;
+
+    animation: bearFloat 3s ease-in-out infinite;
+
+    filter: drop-shadow(
+        0 12px 8px rgba(50,80,150,.18)
+    );
+}
+
+.bear:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.bear:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.bear:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+
+/* Cabeza */
+
+.head {
+
+    position: absolute;
+
+    width: 155px;
+    height: 145px;
+
+    left: 18px;
+    top: 15px;
+
+    border-radius: 48%;
+
+    background: var(--bear);
+
+    box-shadow:
+        inset -10px -10px 0 rgba(0,0,0,.06);
+}
+
+
+/* Orejas */
+
+.ear {
+
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: var(--bear);
+
+    top: -12px;
+}
+
+.ear.left {
+    left: -18px;
+}
+
+.ear.right {
+    right: -18px;
+}
+
+.ear::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    background: rgba(255,255,255,.35);
+
+    border-radius: 50%;
+
+    left: 14px;
+    top: 14px;
+}
+
+
+/* Ojos */
+
+.eye {
+
+    position: absolute;
+
+    width: 13px;
+    height: 18px;
+
+    background: #30233a;
+
+    border-radius: 50%;
+
+    top: 58px;
+}
+
+.eye.left {
+    left: 48px;
+}
+
+.eye.right {
+    right: 48px;
+}
+
+
+/* Brillito */
+
+.eye::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    left: 3px;
+    top: 3px;
+}
+
+
+/* Hocico */
+
+.muzzle {
+
+    position: absolute;
+
+    width: 62px;
+    height: 50px;
+
+    background: #fff2ee;
+
+    border-radius: 50%;
+
+    left: 46px;
+    top: 75px;
+}
+
+
+/* Nariz */
+
+.nose {
+
+    position: absolute;
+
+    width: 17px;
+    height: 13px;
+
+    background: #4b2840;
+
+    border-radius: 50%;
+
+    left: 69px;
+    top: 83px;
+
+    z-index: 2;
+}
+
+
+/* Sonrisa */
+
+.mouth {
+
+    position: absolute;
+
+    width: 28px;
+    height: 16px;
+
+    border-bottom: 4px solid #4b2840;
+
+    border-radius: 50%;
+
+    left: 64px;
+    top: 91px;
+
+    z-index: 2;
+}
+
+
+/* Cuerpo */
+
+.body {
+
+    position: absolute;
+
+    width: 150px;
+    height: 145px;
+
+    left: 20px;
+    top: 130px;
+
+    border-radius: 48% 48% 35% 35%;
+
+    background: var(--bear);
+
+    box-shadow:
+        inset -10px -12px 0 rgba(0,0,0,.06);
+}
+
+
+/* Barriga */
+
+.belly {
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    left: 28px;
+    top: 25px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .9;
+}
+
+
+/* Símbolo */
+
+.symbol {
+
+    position: absolute;
+
+    left: 47px;
+    top: 47px;
+
+    font-size: 40px;
+
+    color: var(--symbol);
+
+    z-index: 2;
+}
+
+
+/* Brazos */
+
+.arm {
+
+    position: absolute;
+
+    width: 55px;
+    height: 105px;
+
+    background: var(--bear);
+
+    border-radius: 50px;
+
+    top: 145px;
+
+    z-index: -1;
+}
+
+.arm.left {
+
+    left: -18px;
+
+    transform: rotate(35deg);
+}
+
+.arm.right {
+
+    right: -18px;
+
+    transform: rotate(-35deg);
+}
+
+
+/* Piernas */
+
+.leg {
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    background: var(--bear);
+
+    border-radius: 50%;
+
+    bottom: -25px;
+}
+
+.leg.left {
+    left: 18px;
+}
+
+.leg.right {
+    right: 18px;
+}
+
+
+/* =========================
+   COLORES DE OSITOS
+========================= */
+
+.pink {
+    --bear: #f57cac;
+    --symbol: #ed3f83;
+}
+
+.yellow {
+    --bear: #ffd34e;
+    --symbol: #f08a20;
+}
+
+.purple {
+    --bear: #a77add;
+    --symbol: #7144b7;
+}
+
+.blue {
+    --bear: #55a9e8;
+    --symbol: #2272c5;
+}
+
+
+/* =========================
+   ANIMACIÓN OSITOS
+========================= */
+
+@keyframes bearFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(2deg);
+    }
+}
+
+
+/* =========================
+   MENSAJE CENTRAL
+========================= */
+
+.message {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 620px;
+
+    margin: -30px auto 0;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.85);
+
+    border: 3px solid white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(50,80,160,.15);
+
+    backdrop-filter: blur(8px);
+}
+
+.message h2 {
+
+    font-size: 32px;
+
+    color: #2674c5;
+}
+
+.message p {
+
+    color: #6b78a5;
+
+    font-size: 17px;
+
+    margin: 8px 0 18px;
+}
+
+
+/* Botón */
+
+.btn {
+
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f45c9c,
+            #ff87bd
+        );
+
+    color: white;
+
+    font-family: "Fredoka";
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(245,90,155,.3);
+
+    transition: .3s;
+}
+
+.btn:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(245,90,155,.45);
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.heart {
+
+    position: fixed;
+
+    z-index: 20;
+
+    color: #ff71ad;
+
+    font-size: 28px;
+
+    pointer-events: none;
+
+    animation: heartFloat 6s linear infinite;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        transform:
+            translateY(110vh)
+            rotate(0deg)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-15vh)
+            rotate(360deg)
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.star {
+
+    position: fixed;
+
+    color: #ffe451;
+
+    font-size: 35px;
+
+    z-index: 2;
+
+    animation: star 2s ease-in-out infinite;
+}
+
+@keyframes star {
+
+    0%,100% {
+        transform: scale(1) rotate(0);
+    }
+
+    50% {
+        transform: scale(1.35) rotate(20deg);
+    }
+}
+
+
+/* =========================
+   PIE
+========================= */
+
+footer {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: white;
+
+    font-size: 17px;
+
+    text-shadow: 1px 2px 3px rgba(50,80,150,.3);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .rainbow {
+        width: 600px;
+        height: 300px;
+    }
+
+    .bears {
+        height: auto;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .bear {
+        transform: scale(.8);
+    }
+
+    .message {
+        margin: 20px;
+    }
+}
+
+@media(max-width:550px) {
+
+    .header {
+        padding: 25px 15px 0;
+    }
+
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .header p {
+        font-size: 17px;
+    }
+
+    .bear {
+        transform: scale(.65);
+        margin: -25px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CIELO
+========================= -->
+
+<div class="sky">
+
+    <div class="sun"></div>
+
+    <div class="cloud cloud1"></div>
+
+    <div class="cloud cloud2"></div>
+
+    <div class="rainbow"></div>
+
+</div>
+
+
+<!-- ESTRELLAS -->
+
+<div class="star" style="left:7%;top:8%;">★</div>
+
+<div class="star" style="left:25%;top:15%;animation-delay:.7s;">★</div>
+
+<div class="star" style="right:22%;top:12%;animation-delay:1s;">★</div>
+
+<div class="star" style="right:7%;top:43%;animation-delay:1.5s;">★</div>
+
+
+<!-- CORAZONES -->
+
+<div class="heart" style="left:5%;animation-delay:0s;">♥</div>
+
+<div class="heart" style="left:18%;animation-delay:2s;">♥</div>
+
+<div class="heart" style="left:76%;animation-delay:1s;">♥</div>
+
+<div class="heart" style="left:91%;animation-delay:3s;">♥</div>
+
+
+<!-- =========================
+     ENCABEZADO
+========================= -->
+
+<header class="header">
+
+    <h1>
+        Bienvenidos al mundo
+        <span>♥</span>
+        de los ositos
+    </h1>
+
+    <p>
+        🌈 Amor · Amistad · Alegría · Sueños 🌈
+    </p>
+
+</header>
+
+
+<!-- =========================
+     OSITOS
+========================= -->
+
+<section class="bears">
+
+
+    <!-- OSITO ROSA -->
+
+    <div class="bear pink">
+
+        <div class="head">
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="muzzle"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="body">
+
+            <div class="belly"></div>
+
+            <div class="symbol">
+                ♥
+            </div>
+
+        </div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+    </div>
+
+
+
+    <!-- OSITO AMARILLO -->
+
+    <div class="bear yellow">
+
+        <div class="head">
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="muzzle"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="body">
+
+            <div class="belly"></div>
+
+            <div class="symbol">
+                ☀
+            </div>
+
+        </div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+    </div>
+
+
+
+    <!-- OSITO MORADO -->
+
+    <div class="bear purple">
+
+        <div class="head">
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="muzzle"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="body">
+
+            <div class="belly"></div>
+
+            <div class="symbol">
+                💜
+            </div>
+
+        </div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+    </div>
+
+
+
+    <!-- OSITO AZUL -->
+
+    <div class="bear blue">
+
+        <div class="head">
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="muzzle"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="body">
+
+            <div class="belly"></div>
+
+            <div class="symbol">
+                ☁
+            </div>
+
+        </div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     MENSAJE
+========================= -->
+
+<section class="message">
+
+    <h2>
+        🧸 ¡Un lugar para soñar! 💗
+    </h2>
+
+    <p>
+        Pequeños pasos, grandes sueños.
+        Juntos hacemos un mundo más feliz.
+    </p>
+
+    <button class="btn" onclick="mensaje()">
+        ✨ Comenzar aventura ✨
+    </button>
+
+</section>
+
+
+<footer>
+
+    🌈 Sueña · Cree · Logra · Sonríe 🌈
+
+</footer>
+
+
+<script>
+
+function mensaje() {
+
+    alert(
+        "🧸💗 ¡Bienvenido al mundo de los ositos! 🌈✨\n\n" +
+        "Recuerda: sueña, cree y nunca dejes de sonreír."
+    );
+
+}
+
+
+/* Crear corazones automáticamente */
+
+setInterval(() => {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    heart.style.fontSize =
+        (18 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+
+}, 1800);
+
+</script>
+
+</body>
+</html>

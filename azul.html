@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Mundo Azul, un espacio de amistad, paz y tranquilidad.">
+
+<title>💙 Mundo Azul | Osito Azul</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --azul:#2196d3;
+    --azul-claro:#6dc7f4;
+    --azul-profundo:#126da5;
+
+    --cielo:#bdeaff;
+    --cielo-2:#e9f9ff;
+
+    --blanco:#ffffff;
+
+    --texto:#315f79;
+    --texto-claro:#6b8da1;
+
+    --glass:rgba(255,255,255,.65);
+
+    --sombra:
+    0 20px 50px rgba(18,109,165,.16);
+
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Fredoka',sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #9bdcff 0%,
+        #d9f4ff 45%,
+        #f8fdff 100%
+    );
+
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+}
+
+/* =========================================================
+   SCROLL BAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#dff5ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        #64c3ef,
+        #1884c2
+    );
+
+    border-radius:20px;
+
+}
+
+/* =========================================================
+   BARRA DE PROGRESO
+========================================================= */
+
+.progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #78d5ff,
+        #1689c8,
+        #9ae4ff
+    );
+
+    z-index:9999;
+
+}
+
+
+/* =========================================================
+   FONDO HERO
+========================================================= */
+
+.sky-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.7),
+        transparent 70%
+    );
+
+    top:-300px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+/* =========================================================
+   NUBES
+========================================================= */
+
+.cloud{
+
+    position:absolute;
+
+    width:180px;
+    height:55px;
+
+    background:white;
+
+    border-radius:100px;
+
+    opacity:.75;
+
+    filter:
+    drop-shadow(
+        0 10px 15px
+        rgba(70,160,205,.08)
+    );
+
+    animation:
+    cloudMove 28s linear infinite;
+
+}
+
+.cloud::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    background:white;
+
+    border-radius:50%;
+
+    left:25px;
+
+    top:-38px;
+
+}
+
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:white;
+
+    border-radius:50%;
+
+    right:20px;
+
+    top:-48px;
+
+}
+
+.cloud.one{
+
+    top:130px;
+    left:-250px;
+
+}
+
+.cloud.two{
+
+    top:300px;
+    left:-400px;
+
+    transform:scale(.7);
+
+    animation-delay:8s;
+
+}
+
+.cloud.three{
+
+    top:470px;
+    left:-300px;
+
+    transform:scale(1.3);
+
+    animation-delay:15s;
+
+}
+
+@keyframes cloudMove{
+
+    from{
+
+        transform:
+        translateX(-100px);
+
+    }
+
+    to{
+
+        transform:
+        translateX(calc(100vw + 500px));
+
+    }
+
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:20;
+
+    max-width:1000px;
+
+}
+
+.welcome{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+    10px
+    20px;
+
+    background:
+    rgba(255,255,255,.78);
+
+    border:
+    1px solid white;
+
+    border-radius:50px;
+
+    color:#2188c3;
+
+    font-weight:600;
+
+    box-shadow:
+    0 10px 30px
+    rgba(25,130,185,.13);
+
+    animation:
+    floating 3s ease-in-out infinite;
+
+}
+
+.hero h1{
+
+    margin-top:20px;
+
+    font-size:
+    clamp(55px,9vw,110px);
+
+    line-height:.95;
+
+    color:#1686c4;
+
+    text-shadow:
+
+    0 5px 0 #d4f4ff,
+
+    0 10px 25px
+    rgba(22,126,185,.15);
+
+    letter-spacing:-3px;
+
+}
+
+.hero h1 span{
+
+    color:#65c9f4;
+
+}
+
+.hero-description{
+
+    max-width:680px;
+
+    margin:
+    25px auto;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:#527d94;
+
+}
+
+/* =========================================================
+   OSITO
+========================================================= */
+
+.bear-stage{
+
+    position:relative;
+
+    width:340px;
+    height:340px;
+
+    margin:
+    30px auto 0;
+
+    perspective:1000px;
+
+}
+
+.bear-glow{
+
+    position:absolute;
+
+    width:270px;
+    height:80px;
+
+    bottom:15px;
+    left:35px;
+
+    background:
+    rgba(38,151,210,.18);
+
+    filter:blur(20px);
+
+    border-radius:50%;
+
+}
+
+.bear{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    position:relative;
+
+    z-index:5;
+
+    filter:
+    drop-shadow(
+        0 25px 20px
+        rgba(18,109,165,.22)
+    );
+
+    animation:
+    bearFloat 4s ease-in-out infinite;
+
+    transition:
+    transform .15s ease;
+
+}
+
+@keyframes bearFloat{
+
+    0%,100%{
+
+        transform:
+        translateY(0)
+        rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-20px)
+        rotate(2deg);
+
+    }
+
+}
+
+/* =========================================================
+   ESTRELLITAS
+========================================================= */
+
+.spark{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:25px;
+
+    animation:
+    sparkle 2s ease-in-out infinite;
+
+}
+
+.spark.s1{
+
+    top:25%;
+    left:20%;
+
+}
+
+.spark.s2{
+
+    top:35%;
+    right:20%;
+
+    animation-delay:.5s;
+
+}
+
+.spark.s3{
+
+    top:65%;
+    left:15%;
+
+    animation-delay:1s;
+
+}
+
+.spark.s4{
+
+    top:60%;
+    right:14%;
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:
+        scale(.7)
+        rotate(0deg);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:
+        scale(1.3)
+        rotate(20deg);
+
+    }
+
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.actions{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.btn{
+
+    border:none;
+
+    padding:
+    15px
+    28px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.btn-primary{
+
+    background:
+    linear-gradient(
+        135deg,
+        #53c7f4,
+        #147db8
+    );
+
+    color:white;
+
+    box-shadow:
+    0 12px 25px
+    rgba(20,125,184,.25);
+
+}
+
+.btn-secondary{
+
+    background:white;
+
+    color:#2687bc;
+
+    border:
+    2px solid #c7edff;
+
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.04);
+
+}
+
+/* =========================================================
+   PARTICULAS
+========================================================= */
+
+.particle{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    background:
+    rgba(255,255,255,.8);
+
+    border-radius:50%;
+
+    animation:
+    particleMove 8s linear infinite;
+
+}
+
+.p1{left:10%;bottom:20%;}
+.p2{left:30%;bottom:5%;animation-delay:2s;}
+.p3{left:60%;bottom:15%;animation-delay:4s;}
+.p4{left:80%;bottom:8%;animation-delay:6s;}
+
+@keyframes particleMove{
+
+    0%{
+
+        transform:
+        translateY(0);
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-500px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+section{
+
+    position:relative;
+
+    padding:
+    110px 7%;
+
+}
+
+.section-header{
+
+    max-width:750px;
+
+    margin:
+    0 auto 55px;
+
+    text-align:center;
+
+}
+
+.section-label{
+
+    display:inline-block;
+
+    padding:
+    8px 18px;
+
+    background:#dff6ff;
+
+    color:#1685c0;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.section-title{
+
+    font-size:
+    clamp(35px,5vw,55px);
+
+    color:#1685c0;
+
+    margin-bottom:15px;
+
+}
+
+.section-text{
+
+    color:#63869a;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+/* =========================================================
+   INFORMACION
+========================================================= */
+
+.info{
+
+    background:
+    linear-gradient(
+        180deg,
+        #f7fdff,
+        #dff5ff
+    );
+
+}
+
+.info-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.info-card{
+
+    position:relative;
+
+    padding:40px 30px;
+
+    background:
+    rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(255,255,255,.9);
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:
+    var(--sombra);
+
+    transition:.4s;
+
+    overflow:hidden;
+
+}
+
+.info-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:#d8f4ff;
+
+    border-radius:50%;
+
+    top:-60px;
+    right:-50px;
+
+}
+
+.info-card:hover{
+
+    transform:
+    translateY(-15px)
+    rotate(1deg);
+
+}
+
+.info-icon{
+
+    width:80px;
+    height:80px;
+
+    margin:
+    0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #d9f5ff,
+        #ffffff
+    );
+
+    font-size:42px;
+
+    box-shadow:
+    0 10px 20px
+    rgba(25,130,185,.12);
+
+}
+
+.info-card h3{
+
+    font-size:27px;
+
+    color:#208bc7;
+
+    margin-bottom:12px;
+
+}
+
+.info-card p{
+
+    color:#65889c;
+
+    line-height:1.7;
+
+}
+
+/* =========================================================
+   GALERIA
+========================================================= */
+
+.gallery{
+
+    background:#bfeaff;
+
+}
+
+.gallery-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:28px;
+
+}
+
+.photo{
+
+    position:relative;
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 20px 40px
+    rgba(20,115,170,.18);
+
+    transition:.5s;
+
+}
+
+.photo:hover{
+
+    transform:
+    translateY(-15px)
+    rotate(-1deg);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    display:block;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e4f8ff,
+        #c3edff
+    );
+
+}
+
+.photo-info{
+
+    padding:
+    17px 10px 8px;
+
+    text-align:center;
+
+}
+
+.photo-info h3{
+
+    color:#2188c2;
+
+    font-size:21px;
+
+}
+
+.photo-info p{
+
+    color:#7695a6;
+
+    margin-top:5px;
+
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.letter-section{
+
+    background:
+    linear-gradient(
+        180deg,
+        #e4f8ff,
+        #ffffff
+    );
+
+}
+
+.letter{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:
+    60px 55px;
+
+    background:#fff;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 25px 60px
+    rgba(20,115,170,.15);
+
+    position:relative;
+
+    border:
+    3px solid #d6f3ff;
+
+    transform:rotate(-.7deg);
+
+}
+
+.letter::before{
+
+    content:"💙";
+
+    position:absolute;
+
+    top:-35px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    border-radius:50%;
+
+    font-size:38px;
+
+    box-shadow:
+    0 10px 20px
+    rgba(20,120,175,.13);
+
+}
+
+.letter h3{
+
+    text-align:center;
+
+    color:#1785c2;
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    text-align:center;
+
+    color:#5c8195;
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+/* =========================================================
+   ELEGIR
+========================================================= */
+
+.choose{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #65c9f4,
+        #1985bf
+    );
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+.choose::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.08);
+
+    top:-300px;
+    left:-200px;
+
+}
+
+.choose h2{
+
+    position:relative;
+
+    font-size:
+    clamp(40px,6vw,65px);
+
+    margin-bottom:15px;
+
+}
+
+.choose p{
+
+    position:relative;
+
+    max-width:650px;
+
+    margin:
+    0 auto 30px;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+.choose .btn{
+
+    position:relative;
+
+}
+
+.choose .btn-primary{
+
+    background:white;
+
+    color:#1480bb;
+
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    rgba(12,76,110,.45);
+
+    backdrop-filter:blur(10px);
+
+    z-index:9000;
+
+    padding:20px;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-box{
+
+    max-width:500px;
+
+    width:100%;
+
+    background:white;
+
+    border-radius:35px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 30px 80px
+    rgba(0,60,100,.25);
+
+    animation:
+    modalIn .4s ease;
+
+}
+
+@keyframes modalIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px)
+        scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+.modal-icon{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+}
+
+.modal-box h2{
+
+    color:#1686c3;
+
+    font-size:32px;
+
+}
+
+.modal-box p{
+
+    margin:
+    15px 0 25px;
+
+    color:#688b9e;
+
+    line-height:1.6;
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#126fa6;
+
+    color:white;
+
+    padding:
+    45px 7%;
+
+    text-align:center;
+
+}
+
+.footer-logo{
+
+    font-size:27px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    opacity:.85;
+
+    margin:6px;
+
+}
+
+/* =========================================================
+   ANIMACION SCROLL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .navbar{
+
+        width:94%;
+
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+        max-width:600px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+        max-width:600px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+
+        padding-top:130px;
+
+    }
+
+    .hero h1{
+
+        font-size:58px;
+
+    }
+
+    .hero-description{
+
+        font-size:17px;
+
+    }
+
+    .bear-stage{
+
+        width:270px;
+        height:270px;
+
+    }
+
+    section{
+
+        padding:
+        80px 5%;
+
+    }
+
+    .letter{
+
+        padding:
+        55px 22px 35px;
+
+    }
+
+    .actions{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="progress" id="progress"></div>
+
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="inicio">
+
+
+    <div class="sky-glow"></div>
+
+
+    <!-- NUBES -->
+
+    <div class="cloud one"></div>
+
+    <div class="cloud two"></div>
+
+    <div class="cloud three"></div>
+
+
+    <!-- PARTICULAS -->
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+
+
+    <!-- ESTRELLAS -->
+
+    <div class="spark s1">✦</div>
+
+    <div class="spark s2">✧</div>
+
+    <div class="spark s3">✦</div>
+
+    <div class="spark s4">✧</div>
+
+
+    <div class="hero-content">
+
+
+        <div class="welcome">
+
+            ☁️
+
+            Bienvenido al Mundo Azul
+
+            💙
+
+        </div>
+
+
+        <h1>
+
+            Osito
+
+            <span>
+                Azul
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Un rincón lleno de calma, amistad y buenos recuerdos.
+            Aquí cada momento tiene un poquito de cielo,
+            un poquito de mar y mucho cariño.
+
+        </p>
+
+
+        <!-- OSITO -->
+
+        <div
+            class="bear-stage"
+            id="bearStage">
+
+
+            <div class="bear-glow"></div>
+
+
+            <img
+                src="azul.png"
+                alt="Osito Azul"
+                class="bear"
+                id="bear">
+
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                class="btn btn-primary"
+                onclick="irA('informacion')">
+
+                ✨ Conocer su mundo
+
+            </button>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="irA('galeria')">
+
+                📸 Ver recuerdos
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMACION
+===================================================== -->
+
+<section
+    class="info"
+    id="informacion">
+
+
+    <div class="section-header reveal">
+
+        <span class="section-label">
+            💙 SU ESENCIA
+        </span>
+
+        <h2 class="section-title">
+            Un mundo para sentirse bien
+        </h2>
+
+        <p class="section-text">
+
+            El Osito Azul representa esas pequeñas cosas
+            que hacen que un día normal se convierta
+            en un recuerdo especial.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <article class="info-card reveal">
+
+            <div class="info-icon">
+                🤝
+            </div>
+
+            <h3>
+                Amistad
+            </h3>
+
+            <p>
+
+                La amistad es compartir momentos,
+                escuchar, acompañar y estar presente
+                cuando alguien lo necesita.
+
+            </p>
+
+        </article>
+
+
+        <article class="info-card reveal">
+
+            <div class="info-icon">
+                🕊️
+            </div>
+
+            <h3>
+                Paz
+            </h3>
+
+            <p>
+
+                Un espacio donde puedes desconectarte
+                por un momento y disfrutar de tranquilidad,
+                armonía y buenas energías.
+
+            </p>
+
+        </article>
+
+
+        <article class="info-card reveal">
+
+            <div class="info-icon">
+                ☁️
+            </div>
+
+            <h3>
+                Tranquilidad
+            </h3>
+
+            <p>
+
+                El azul recuerda al cielo despejado
+                y al agua tranquila, creando una sensación
+                de calma y seguridad.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALERIA
+===================================================== -->
+
+<section
+    class="gallery"
+    id="galeria">
+
+
+    <div class="section-header reveal">
+
+        <span class="section-label">
+            📸 RECUERDOS
+        </span>
+
+        <h2 class="section-title">
+            Galería Azul
+        </h2>
+
+        <p class="section-text">
+
+            Coloca aquí tus fotografías favoritas.
+            Puedes reemplazar las imágenes por tus propios
+            recuerdos y crear tu pequeña colección.
+
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <article class="photo reveal">
+
+            <img
+                src="imagen-azul-1.jpg"
+                alt="Recuerdo azul 1">
+
+            <div class="photo-info">
+
+                <h3>
+                    Momentos especiales 💙
+                </h3>
+
+                <p>
+                    Un recuerdo para guardar.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="photo reveal">
+
+            <img
+                src="imagen-azul-2.jpg"
+                alt="Recuerdo azul 2">
+
+            <div class="photo-info">
+
+                <h3>
+                    Días felices ☁️
+                </h3>
+
+                <p>
+                    Pequeños momentos, grandes recuerdos.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="photo reveal">
+
+            <img
+                src="imagen-azul-3.jpg"
+                alt="Recuerdo azul 3">
+
+            <div class="photo-info">
+
+                <h3>
+                    Siempre juntos 🤝
+                </h3>
+
+                <p>
+                    La amistad hace especial cada momento.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CARTA
+===================================================== -->
+
+<section
+    class="letter-section"
+    id="carta">
+
+
+    <div class="section-header reveal">
+
+        <span class="section-label">
+            💌 MENSAJE ESPECIAL
+        </span>
+
+        <h2 class="section-title">
+            Una carta del Osito Azul
+        </h2>
+
+    </div>
+
+
+    <div class="letter reveal">
+
+
+        <h3>
+            Para ti 💙
+        </h3>
+
+
+        <p>
+
+            Hay días en los que todo parece ir demasiado rápido.
+
+            <br><br>
+
+            Por eso existe este pequeño rincón azul:
+
+            para recordar que también está bien detenerse,
+            respirar y disfrutar de las cosas sencillas.
+
+            <br><br>
+
+            La amistad, una sonrisa, una conversación
+            o un recuerdo bonito pueden convertirse
+            en una pequeña luz dentro de cualquier día.
+
+            <br><br>
+
+            Nunca olvides valorar a las personas que
+            hacen que tu mundo sea un poquito más bonito.
+
+            <br><br>
+
+            Con cariño,
+
+            <br>
+
+            <strong>
+                El Osito Azul 🧸💙
+            </strong>
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ELEGIR
+===================================================== -->
+
+<section
+    class="choose"
+    id="elegir">
+
+
+    <h2 class="reveal">
+
+        ¿Quieres elegir al Osito Azul?
+
+    </h2>
+
+
+    <p class="reveal">
+
+        Si este pequeño mundo representa lo que buscas,
+        puedes convertir al Osito Azul en tu osito especial.
+
+    </p>
+
+
+    <button
+        class="btn btn-primary reveal"
+        onclick="elegirAzul()">
+
+        💙 Elegir Osito Azul
+
+    </button>
+
+
+    <button
+        class="btn btn-secondary reveal"
+        onclick="volverMenu()">
+
+        🏠 Volver al mundo de Ositos
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        🧸 Mundo de Ositos 💙
+
+    </div>
+
+    <p>
+
+        Un pequeño universo creado para compartir
+        amistad, cariño y momentos especiales.
+
+    </p>
+
+    <p>
+
+        ✨ Osito Azul • Amistad • Paz • Tranquilidad ✨
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="modal">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-icon">
+            🧸💙
+        </div>
+
+
+        <h2>
+            ¡Has elegido al Osito Azul!
+        </h2>
+
+
+        <p>
+
+            Ahora el Osito Azul es tu compañero
+            dentro de este pequeño mundo de amistad,
+            tranquilidad y buenos recuerdos.
+
+        </p>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="cerrarModal()">
+
+            ✨ Continuar
+
+        </button>
+
+
+        <button
+            class="btn btn-secondary"
+            onclick="volverMenu()">
+
+            🏠 Ir al inicio
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   NAVEGACION
+========================================================= */
+
+function irA(id){
+
+    document
+    .getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   ELEGIR AZUL
+========================================================= */
+
+function elegirAzul(){
+
+    localStorage.setItem(
+        "ositoElegido",
+        "azul"
+    );
+
+    document
+    .getElementById("modal")
+    .classList
+    .add("active");
+
+}
+
+
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+function cerrarModal(){
+
+    document
+    .getElementById("modal")
+    .classList
+    .remove("active");
+
+}
+
+
+/* =========================================================
+   VOLVER MENU
+========================================================= */
+
+function volverMenu(){
+
+    document.body.style.opacity="0";
+
+    document.body.style.transition=
+    "opacity .4s ease";
+
+    setTimeout(function(){
+
+        window.location.href=
+        "index.html";
+
+    },400);
+
+}
+
+
+/* =========================================================
+   CERRAR MODAL AL HACER CLICK FUERA
+========================================================= */
+
+document
+.getElementById("modal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            cerrarModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+    function(entries){
+
+        entries.forEach(
+            function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry
+                    .target
+                    .classList
+                    .add("show");
+
+                }
+
+            }
+        );
+
+    },
+    {
+        threshold:.15
+    }
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(
+    element =>
+    observer.observe(element)
+);
+
+
+/* =========================================================
+   BARRA DE PROGRESO
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const scrollTop =
+        document.documentElement.scrollTop;
+
+        const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+        const progress =
+        (scrollTop / height) * 100;
+
+        document
+        .getElementById("progress")
+        .style.width =
+        progress + "%";
+
+    }
+);
+
+
+/* =========================================================
+   EFECTO 3D OSITO
+========================================================= */
+
+const stage =
+document.getElementById("bearStage");
+
+const bear =
+document.getElementById("bear");
+
+
+stage.addEventListener(
+    "mousemove",
+    function(e){
+
+        const rect =
+        stage.getBoundingClientRect();
+
+        const x =
+        e.clientX - rect.left;
+
+        const y =
+        e.clientY - rect.top;
+
+        const centerX =
+        rect.width / 2;
+
+        const centerY =
+        rect.height / 2;
+
+        const rotateY =
+        (x - centerX) / 12;
+
+        const rotateX =
+        (centerY - y) / 12;
+
+
+        bear.style.transform =
+        `
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.04)
+        `;
+
+    }
+);
+
+
+stage.addEventListener(
+    "mouseleave",
+    function(){
+
+        bear.style.transform="";
+
+    }
+);
+
+
+/* =========================================================
+   EFECTO 3D TARJETAS
+========================================================= */
+
+document
+.querySelectorAll(".info-card,.photo")
+.forEach(
+    card => {
+
+        card.addEventListener(
+            "mousemove",
+            function(e){
+
+                const rect =
+                card.getBoundingClientRect();
+
+                const x =
+                e.clientX -
+                rect.left;
+
+                const y =
+                e.clientY -
+                rect.top;
+
+                const rotateY =
+                (x - rect.width/2) / 25;
+
+                const rotateX =
+                (rect.height/2 - y) / 25;
+
+                card.style.transform =
+                `
+                perspective(800px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-8px)
+                `;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            function(){
+
+                card.style.transform="";
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ANIMACION DE ENTRADA
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        document.body.style.opacity="0";
+
+        setTimeout(
+            function(){
+
+                document.body.style.transition=
+                "opacity .8s ease";
+
+                document.body.style.opacity="1";
+
+            },
+            100
+        );
+
+    }
+);
+
+
+/* =========================================================
+   DETECTAR ELECCION ANTERIOR
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        const elegido =
+        localStorage.getItem(
+            "ositoElegido"
+        );
+
+        if(elegido === "azul"){
+
+            console.log(
+                "💙 El usuario eligió al Osito Azul"
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

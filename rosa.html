@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>💗 Mundo Rosa | Ositos Cariñositos</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+a {
+    text-decoration: none;
+}
+/* =====================================
+   GENERAL
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Fredoka",sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #86d3f5,
+        #c9edfb,
+        #fff0f7
+    );
+
+    color:#65728e;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================
+   FONDO
+===================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+.cloud{
+
+    position:absolute;
+
+    width:220px;
+
+    height:70px;
+
+    background:white;
+
+    border-radius:50px;
+
+    opacity:.7;
+
+    animation:
+    moverNube 25s linear infinite;
+}
+
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+}
+
+
+.cloud::before{
+
+    width:100px;
+    height:100px;
+
+    left:35px;
+    top:-45px;
+}
+
+
+.cloud::after{
+
+    width:80px;
+    height:80px;
+
+    right:30px;
+    top:-35px;
+}
+
+
+.cloud1{
+    top:120px;
+    left:-250px;
+}
+
+
+.cloud2{
+
+    top:450px;
+    left:-300px;
+
+    animation-delay:10s;
+}
+
+
+@keyframes moverNube{
+
+    from{
+        transform:translateX(-300px);
+    }
+
+    to{
+        transform:translateX(140vw);
+    }
+
+}
+
+
+/* =====================================
+   CORAZONES
+===================================== */
+
+.corazon{
+
+    position:fixed;
+
+    color:#f875ad;
+
+    font-size:25px;
+
+    z-index:30;
+
+    pointer-events:none;
+
+    animation:
+    flotar 7s linear infinite;
+}
+
+
+@keyframes flotar{
+
+    0%{
+
+        transform:
+        translateY(110vh)
+        rotate(0);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-15vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar{
+
+    position:relative;
+
+    z-index:20;
+
+    width:100%;
+
+    padding:18px 7%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:
+    rgba(255,255,255,.82);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:
+    2px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 5px 20px rgba(80,130,170,.12);
+}
+
+
+.logo{
+
+    color:#e95796;
+
+    font-size:27px;
+
+    font-weight:700;
+}
+
+
+.logo span{
+    color:#2679c5;
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#53789a;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+
+.nav-links a:hover{
+
+    color:#ec5d9e;
+
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    position:relative;
+
+    z-index:5;
+
+    min-height:650px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:70px;
+
+    padding:70px 8%;
+
+}
+
+
+.hero-text{
+
+    max-width:560px;
+
+    animation:
+    aparecer 1s ease;
+}
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+
+}
+
+
+.etiqueta{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#ffe0ed;
+
+    color:#e94e91;
+
+    font-size:15px;
+
+    margin-bottom:15px;
+}
+
+
+.hero h1{
+
+    font-size:
+    clamp(45px,6vw,75px);
+
+    line-height:1;
+
+    color:#e95396;
+
+    text-shadow:
+    3px 4px 0 white;
+}
+
+
+.hero h1 span{
+
+    color:#277bc4;
+}
+
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:19px;
+
+    line-height:1.6;
+
+    color:#617996;
+}
+
+
+.hero-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+.btn{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:35px;
+
+    font-family:"Fredoka";
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.btn-pink{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ef619d,
+        #ff91be
+    );
+
+    color:white;
+
+    box-shadow:
+    0 8px 20px rgba(239,97,157,.3);
+}
+
+
+.btn-pink:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+}
+
+
+.btn-white{
+
+    background:white;
+
+    color:#e65797;
+
+    border:
+    2px solid #f5a6c6;
+}
+
+
+/* =====================================
+   IMAGEN DEL OSITO
+===================================== */
+
+.hero-image{
+
+    position:relative;
+
+    width:380px;
+
+    height:380px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:
+    ositoFlotando 4s ease-in-out infinite;
+}
+
+
+@keyframes ositoFlotando{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ffb8d5,
+        #f875ad
+    );
+
+    opacity:.35;
+
+    box-shadow:
+    0 20px 60px rgba(230,85,145,.2);
+}
+
+
+.hero-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:330px;
+
+    height:330px;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(
+        0 15px 12px rgba(100,70,100,.2)
+    );
+}
+
+
+/* =====================================
+   SECCIÓN INFORMACIÓN
+===================================== */
+
+.informacion{
+
+    position:relative;
+
+    z-index:5;
+
+    padding:90px 8%;
+
+    background:
+    rgba(255,255,255,.45);
+}
+
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+
+.titulo span{
+
+    font-size:35px;
+}
+
+
+.titulo h2{
+
+    font-size:42px;
+
+    color:#2879c2;
+
+    text-shadow:
+    2px 3px white;
+}
+
+
+.titulo p{
+
+    color:#71859c;
+
+    margin-top:7px;
+}
+
+
+.info-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+.info-card{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:white;
+
+    border:
+    3px solid #ffd2e4;
+
+    box-shadow:
+    0 12px 30px rgba(60,100,140,.12);
+
+    transition:.3s;
+}
+
+
+.info-card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+
+.info-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+
+.info-card h3{
+
+    color:#e45494;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+
+.info-card p{
+
+    line-height:1.6;
+
+    font-size:15px;
+}
+
+
+/* =====================================
+   CARTA
+===================================== */
+
+.carta-section{
+
+    position:relative;
+
+    z-index:5;
+
+    padding:100px 20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fff0f7,
+        #ffddec
+    );
+}
+
+
+.carta{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:45px;
+
+    background:
+    #fffdfd;
+
+    border-radius:25px;
+
+    border:
+    3px solid #f6a8c6;
+
+    box-shadow:
+    0 20px 50px rgba(180,80,130,.18);
+
+    position:relative;
+}
+
+
+.carta::before{
+
+    content:"💗";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    font-size:45px;
+}
+
+
+.carta h2{
+
+    text-align:center;
+
+    color:#e55496;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+}
+
+
+.carta p{
+
+    color:#687891;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+
+.firma{
+
+    text-align:right;
+
+    color:#e95796;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    margin-top:25px;
+}
+
+
+/* =====================================
+   ELEGIR
+===================================== */
+
+.elegir{
+
+    position:relative;
+
+    z-index:5;
+
+    padding:100px 20px;
+
+    text-align:center;
+
+    background:#dff4ff;
+}
+
+
+.elegir h2{
+
+    color:#2779bd;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+
+.elegir p{
+
+    color:#627d97;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+}
+
+
+.elegir button{
+
+    border:none;
+
+    padding:16px 40px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f15f9e,
+        #ff91bc
+    );
+
+    color:white;
+
+    font-family:"Fredoka";
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px rgba(240,90,155,.3);
+
+    transition:.3s;
+}
+
+
+.elegir button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.04);
+}
+
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:30px;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .info-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .hero{
+
+        padding:
+        60px 20px;
+    }
+
+    .hero-image{
+
+        width:280px;
+        height:280px;
+    }
+
+    .hero-image::before{
+
+        width:270px;
+        height:270px;
+    }
+
+    .hero-image img{
+
+        width:250px;
+        height:250px;
+    }
+
+    .titulo h2,
+    .elegir h2{
+
+        font-size:32px;
+    }
+
+    .carta{
+
+        padding:30px 22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FONDO
+===================================== -->
+
+<div class="background">
+
+    <div class="cloud cloud1"></div>
+
+    <div class="cloud cloud2"></div>
+
+</div>
+
+
+<!-- CORAZONES -->
+
+<div class="corazon"
+style="left:5%;animation-delay:0s;">
+♥
+</div>
+
+<div class="corazon"
+style="left:20%;animation-delay:2s;">
+♥
+</div>
+
+<div class="corazon"
+style="left:75%;animation-delay:1s;">
+♥
+</div>
+
+<div class="corazon"
+style="left:90%;animation-delay:4s;">
+♥
+</div>
+
+
+
+
+<!-- =====================================
+     INICIO
+===================================== -->
+
+<section class="hero"
+id="inicio">
+
+
+    <div class="hero-text">
+
+        <div class="etiqueta">
+
+            🩷 Mundo del Osito Rosa
+
+        </div>
+
+
+        <h1>
+
+            Amor,
+            <span>
+                cariño
+            </span>
+
+            y mucha
+            magia 💗
+
+        </h1>
+
+
+        <p>
+
+            Bienvenido al pequeño mundo
+            donde los corazones hablan,
+            la amistad crece y cada detalle
+            puede convertirse en una sonrisa.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#informacion">
+
+                <button class="btn btn-pink">
+
+                    Descubrir 💗
+
+                </button>
+
+            </a>
+
+
+            <a href="#carta">
+
+                <button class="btn btn-white">
+
+                    Leer carta 💌
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         IMAGEN
+    ================================== -->
+
+    <div class="hero-image">
+
+        <!--
+
+        CAMBIA ESTA IMAGEN
+
+        por la imagen de tu Osito Rosa.
+
+        Ejemplo:
+
+        <img src="osito-rosa.png">
+
+        -->
+
+        <img
+        src="rosa.png"
+        alt="Osito Rosa">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     INFORMACIÓN
+===================================== -->
+
+<section class="informacion"
+id="informacion">
+
+
+    <div class="titulo">
+
+        <span>🌷</span>
+
+        <h2>
+            Conoce el Mundo Rosa
+        </h2>
+
+        <p>
+            Un espacio creado para compartir
+            amor y alegría.
+        </p>
+
+    </div>
+
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                💗
+            </div>
+
+            <h3>
+                Amor
+            </h3>
+
+            <p>
+
+                El amor está presente en
+                cada pequeño detalle.
+                Una sonrisa, una palabra
+                bonita o un abrazo pueden
+                cambiar completamente un día.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🫶
+            </div>
+
+            <h3>
+                Cariño
+            </h3>
+
+            <p>
+
+                Compartir cariño significa
+                estar presente, escuchar
+                y demostrar a las personas
+                cuánto nos importan.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🌸
+            </div>
+
+            <h3>
+                Amistad
+            </h3>
+
+            <p>
+
+                Las mejores aventuras son
+                aquellas que se comparten
+                con personas especiales.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CARTA
+===================================== -->
+
+<section class="carta-section"
+id="carta">
+
+
+    <div class="carta">
+
+        <h2>
+            💌 Una pequeña carta
+        </h2>
+
+
+        <p>
+
+            Querida visitante:
+
+        </p>
+
+
+        <p>
+
+            Bienvenida al Mundo Rosa.
+            Aquí queremos recordar que
+            los pequeños detalles pueden
+            hacer grandes diferencias,no lo cree? .
+
+        </p>
+
+
+        <p>
+
+            Nunca tengas miedo de expresar
+            cariño, regalar una sonrisa o
+            decirle a alguien que es
+            importante para ti uu.
+
+        </p>
+
+
+        <p>
+
+            Guarda siempre un poquito de
+            espacio para soñar, imaginar
+            y disfrutar las cosas bonitas
+            de la vida.
+
+        </p>
+
+
+        <p>
+
+            Porque un corazón lleno de amor
+            siempre encuentra una razón
+            para sonreír. 💗
+
+        </p>
+
+
+        <div class="firma">
+
+            Con cariño,<br>
+
+            🧸 El Osito Rosa 💕
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ELEGIR
+===================================== -->
+
+<section class="elegir"
+id="elegir">
+
+
+    <h2>
+        ¿Quieres elegir al Osito Rosa? 💗
+    </h2>
+
+
+    <p>
+
+        Si este es tu mundo,
+        puedes llevarlo contigo. 🧸
+
+    </p>
+
+<button onclick="elegirRosa()">
+    💗 Elegir Osito Rosa 💗
+</button>
+
+<button
+    class="volver-btn"
+    onclick="volverMenu()">
+
+    
+   <a href="intro.html">🌈 Volver a elegir otro osito</a>
+
+
+</button>
+
+</section>
+
+
+
+
+
+
+
+<script>
+
+
+function elegirRosa(){
+
+    const respuesta =
+    confirm(
+        "💗 ¿Quieres elegir al Osito Rosa?\n\n" +
+        "Él estará feliz de acompañarte 🧸🌸"
+    );
+
+
+    if(respuesta){
+
+        alert(
+            "🧸💗 ¡Has elegido al Osito Rosa!\n\n" +
+            "Bienvenido a su mundo de amor y cariño 🌷✨"
+        );
+
+    }
+
+}
+
+
+/* =====================================
+   CREAR CORAZONES
+===================================== */
+
+setInterval(function(){
+
+    const corazon =
+    document.createElement("div");
+
+    corazon.className =
+    "corazon";
+
+    corazon.innerHTML =
+    "♥";
+
+    corazon.style.left =
+    Math.random()*100 + "%";
+
+    corazon.style.fontSize =
+    (15 + Math.random()*25) + "px";
+
+    corazon.style.animationDuration =
+    (4 + Math.random()*4) + "s";
+
+    document.body.appendChild(corazon);
+
+
+    setTimeout(function(){
+
+        corazon.remove();
+
+    },8000);
+
+},1800);
+
+
+</script>
+
+
+</body>
+
+</html>
